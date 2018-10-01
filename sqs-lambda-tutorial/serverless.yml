@@ -5,14 +5,14 @@ custom:
 
 provider:
   name: aws
-  runtime: python3.7
+  runtime: python3.6
 
   iamRoleStatements:
       - Effect: "Allow"
         Action:
           - "sqs:SendMessage"
         Resource:
-          Fn:GetAtt: [ SQSQueue, Arn ]
+          Fn::GetAtt: [ SQSQueue, Arn ]
 
 functions:
   start-lambda:

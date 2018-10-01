@@ -23,4 +23,3 @@ def end(event, context):
     """
     print(event)
     return ''
-
