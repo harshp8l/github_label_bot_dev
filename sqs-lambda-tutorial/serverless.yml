@@ -20,6 +20,9 @@ functions:
     environment:
       SQS_URL:
         Ref: SQSQueue
+    events:
+      - http: POST start
+
   
   end-lambda:
     handler: handler.end

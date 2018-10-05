@@ -11,9 +11,13 @@ def start(event, context):
     """
     print(SQS_CLIENT.send_message(
         QueueUrl=os.getenv('SQS_URL'),
-        MessageBody = 'test'
+        MessageBody = str(event)
     ))
-    return ''
+    return {
+        "statusCode": 200,
+        "headers": { "Content-Type": "application/json"},
+        "body":'hi' 
+    }
 
 def end(event, context):
     """
